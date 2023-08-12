@@ -26,13 +26,12 @@ openai.api_key = os.getenv('OPENAI_API_KEY')
 
 
 def GPT_response(text):
-    if text[:2] = 'Hey Chat,'
-        # 接收回應
-        response = openai.Completion.create(model="text-davinci-003", prompt=text, temperature=0.5, max_tokens=500)
-        print(response)
-        # 重組回應
-        answer = response['choices'][0]['text'].replace('。','')
-        return answer
+    # 接收回應
+    response = openai.Completion.create(model="text-davinci-003", prompt=text, temperature=0.5, max_tokens=500)
+    print(response)
+    # 重組回應
+    answer = response['choices'][0]['text'].replace('。','')
+    return answer
 
 
 # 監聽所有來自 /callback 的 Post Request
