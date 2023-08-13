@@ -33,7 +33,7 @@ def GPT_response(text):
                     {"role": "user", "content": text}
                  ])
     # 重組回應
-    answer = response['choices'][0]['messages']['content']
+    answer = response['choices'][0]['message']['content']
     return answer
                                             
     print(response)
