@@ -27,14 +27,18 @@ openai.api_key = os.getenv('OPENAI_API_KEY')
 
 def GPT_response(text):
     # 接收回應
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo", 
-        messages=[{"role": "system", "content": 'You are a helpful financial analyst who understands stocks and crypto'},
-                    {"role": "user", "content": text}
-                 ])
-    # 重組回應
-    answer = response['choices'][0]['message']['content']
-    return answer
+    words = text.split()  # Split the string into a list of words
+    # Get the first two words
+    first_two_words = " ".join(words[:2])
+    if first_two_words == 'hey chat' or first_two_words == 'hey chat,'
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo", 
+            messages=[{"role": "system", "content": 'You are a helpful financial analyst who understands stocks and crypto'},
+                        {"role": "user", "content": text}
+                     ])
+        # 重組回應
+        answer = response['choices'][0]['message']['content']
+        return answer
                                             
     print(response)
     # 重組回應
