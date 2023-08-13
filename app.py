@@ -30,7 +30,7 @@ def GPT_response(text):
     words = text.split()  # Split the string into a list of words
     # Get the first two words
     first_two_words = " ".join(words[:2])
-    if first_two_words == 'hey chat' or first_two_words == 'hey chat,'
+    if first_two_words == 'hey chat' or first_two_words == 'hey chat,':
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo", 
             messages=[{"role": "system", "content": 'You are a helpful financial analyst who understands stocks and crypto'},
