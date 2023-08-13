@@ -40,10 +40,10 @@ def GPT_response(text):
         answer = response['choices'][0]['message']['content']
         return answer
                                             
-    print(response)
+        print(response)
     # 重組回應
-    answer = response['choices'][0]['text'].replace('。','')
-    return answer
+        answer = response['choices'][0]['text'].replace('。','')
+        return answer
 
 
 # 監聽所有來自 /callback 的 Post Request
